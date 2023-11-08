@@ -19,3 +19,45 @@
 150 POKE 1506, 81 : POKE 55778,4
 160 POKE 1508, 81 : POKE 55780,1
 170 POKE 1510, 42 : POKE 55782,6
+
+
+---- BETA -----
+10 dim agenerata(12)
+
+11 t = 1
+
+21 iutente = 0
+
+22 igenerata = 0
+
+23 print "numeri generati: "
+
+40 agenerata(igenerata) = int(4*rnd(0))+1
+
+41 print ag(ig)
+
+70 print chr$(13) : print "---------"
+
+75 REM DA QUI INSERIMENTO DELL'UNTENTE 
+
+80 for  iutente = 0 to igenerata
+
+90 t = t+1
+
+100 get a$ : if a$ = "" and t < 3000 then goto 90
+
+110 if t = 3000 then goto 700
+
+120 autente = val(a$)
+
+130 if autente <> agenerata(iu) then goto 700.
+
+140 if iutente < igenerata then next iutente
+150 goto 500
+
+
+500 igenerata = igenerata + 1
+501 goto 23
+
+700 print chr$(147)
+701 print "sei una ciola"
