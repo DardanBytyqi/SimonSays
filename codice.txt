@@ -40,3 +40,19 @@
 300 FOR T = 1 TO 10000: NEXT T
 350 PRINT CHR$(147)
 400 END
+
+----------CODICE FATTO 08/11/2023 PER FUNZIONAMENTO SIMON SAYS ------------------
+10 dim ag(12)
+20 dim au(12)
+21 iu = 0
+22 ig = 1
+23 print "numeri generati: "
+40 ag(ig) = int(4*rnd(0))+1
+41 ig = ig + 1
+50 print ag(ig),
+70 print ("---------")
+80 for  iu = 1 to ig
+90 for t = 1 to 5000
+100 get a$
+110 if a$ = ag(iu)
+120 
