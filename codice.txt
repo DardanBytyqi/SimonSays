@@ -69,3 +69,60 @@
 70 PRINT "HAI FINITO IL TEMPO"
 80 END
 90 PRINT "INSERIMENTO ERRATTO"
+
+
+
+------- BETA ------
+
+0 a$ = ""
+11 print chr$(147)
+20 print ("   benvenuto nel gioco del Simon Says")
+21 print ("             premi u per iniziare")
+30 get a$: if a$ = "" then 30
+40 if a$ = "u" then 70
+50 goto 20
+70 print chr$(147)
+80 print "          premi x per tornare"
+81 print "      oppure premi z per iniziare"
+90 get a$: if a$ = "" then 90
+100 if a$ = "x" then 11
+110 if a$ = "z" then 140
+120 print "     opzione errata non corrisponde a nulla"
+130 goto 11
+
+
+140 print chr$(147)
+150 poke 53280, 8: poke 53281, 13
+160 dim agenerata(12)
+180 iutente = 0
+190 igenerata = 0
+200 agenerata(igenerata) = int(8*rnd(0))+5
+
+210 poke 1504, 81: poke 55776, 5
+220 poke 1506, 81: poke 55778, 6
+230 poke 1508, 81: poke 55780, 7
+240 poke 1510, 81: poke 55782, 8
+
+250 for s = 0 to igenerata
+251 print agenerata(s)
+260 poke (1504+((agenerata(s)-5)*2)), 42
+270 for t = 0 to 300
+280 next t
+290 poke (1504+((agenerata(s)-5)*2)),81
+300 next s
+
+
+310 for  iutente = 0 to igenerata
+320 get a$ : if a$ = "" then goto 320
+330 autente = val (a$)
+340 if autente <> agenerata(iu) then goto 700.
+350 if iutente < igenerata then next iutente
+360 goto 500
+
+
+500 igenerata = igenerata + 1
+501 goto 200
+
+700 print chr$(147)
+701 print "sei una ciola"
+
