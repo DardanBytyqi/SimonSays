@@ -213,3 +213,97 @@
 790 goto 750
 
 1700 print chr$(147) : end 
+
+
+------ BETA 4.A ---------
+
+10 highest = 0
+11 print chr$(147)
+12 appoggio = 0
+13 x = 0
+14 co=0
+20 print ("   benvenuto nel gioco del Simon Says")
+21 print ("             premi u per iniziare")
+30 get a$: if a$ = "" then 30
+40 if a$ = "u" then 150
+50 goto 30
+
+140 dim agenerata(99)
+150 print chr$(147)
+151 appoggio = 0
+152 x = 0
+160 poke 53280, 1: poke 53281, 0
+180 iutente = 0
+190 igenerata = 0
+193 punti = 0
+194 for i = 1 to 7
+195 print ""
+196 next i
+197 if co = 1 goto 200
+198 print "    sei pronto? premi x per iniziare"
+199 goto 201
+200 print ""
+201 for i = 1 to 13
+202 print ""
+203 next i
+204 print "  score                      highest" highest
+
+
+
+208 agenerata(igenerata) = int(4*rnd(0))+5
+209 rem poke 1984, 19: poke 1985, 3: poke 1986, 15: poke 1987, 18: poke 1988, 5 : rem score
+210 poke 1520, 81: poke 55792, 5
+220 poke 1522, 81: poke 55795, 6
+230 poke 1524, 81: poke 55796, 7
+240 poke 1526, 81: poke 55798, 8
+241 poke 1912, (48+x) : poke 1913, (appoggio+48)
+242 if co = 1 goto 250
+
+244 get a$ : if a$ = "" or a$ <> "x" then goto 244
+245 if a$ = "x" then co = 1 : goto 150
+
+
+250 for s = 0 to igenerata
+260 poke (1520+((agenerata(s)-5)*2)), 42
+270 for t = 0 to 330
+280 next t
+
+281 poke (1520+((agenerata(s)-5)*2)),81
+290 for t = 0 to 80
+291 next t
+300 next s
+
+
+310 for  iutente = 0 to igenerata
+320 get a$ : if a$ = "" then goto 320
+330 autente = val (a$)
+340 if autente <> agenerata(iu) then goto 600.
+350 if iutente < igenerata then next iutente
+360 goto 500
+
+
+500 igenerata = igenerata + 1
+501 punti = igenerata
+502 appoggio = appoggio + 1 
+510 if appoggio > 9 then x = x + 1 : if appoggio > 9 then appoggio = 0 
+
+530 goto 208
+
+600 if autente = 5 or autente = 6 or autente = 7 or autente = 8 then goto 700
+610 goto 320
+
+700 print chr$(147)
+701 print "                  game over"
+702 if punti > highest then highest = punti : print "hai battuto il record personale"
+703 co = 0
+710 print "premi x per ritornare all'inizio"
+720 print "premi y per giocare di nuovo"
+730 print "premi z per terminare"
+
+740 get a$ : if a$ = "" then goto 740
+750 if a$ = "x" then goto 11
+760 if a$ = "y" then goto 150
+770 if a$ = "z" then goto 1700
+780 goto 740
+
+1700 print chr$(147) : end 
