@@ -196,19 +196,20 @@
 610 goto 320
 
 700 print chr$(147)
-701 print "                  game over"
-702 if punti > highest then highest = punti : print "hai battuto il record personale"
-710 print "premi x per ritornare all'inizio"
-720 print "premi y per giocare di nuovo"
-730 print "premi z per terminare"
+701 if punti > highest then highest = punti : print "hai battuto il record personale"
+
+710 print "                  game over"
+720 print "premi x per ritornare all'inizio"
+730 print "premi y per giocare di nuovo"
+740 print "premi z per terminare"
 
 
 
 
-740 get a$ : if a$ = "" then goto 740
-750 if a$ = "x" then goto 11
-760 if a$ = "y" then goto 150
-770 if a$ = "z" then goto 1700
-780 goto 740
+750 get a$ : if a$ = "" then goto 750
+760 if a$ = "x" then goto 11
+770 if a$ = "y" then goto 150
+780 if a$ = "z" then goto 1700
+790 goto 750
 
 1700 print chr$(147) : end 
