@@ -86,12 +86,15 @@
 160 dim agenerata(15)
 180 iutente = 0
 190 igenerata = 0
-191 highest = 0
-192 dcan = 0
+191 highest1 = 0
+192 highest2=0
+193 dcan1 = 0
+194 dcan2 = 0
 
 200 agenerata(igenerata) = int(4*rnd(0))+5
-201 print "score: " : print dcan
-202 print "   highest: " : print highest
+201 poke 1984, 19: poke 1985, 3: poke 1986, 15: poke 1987, 18: poke 1988, 5 : rem score
+202 poke 1989, 32: poke 
+203 print "   highest: " : print highest
 210 poke 1504, 81: poke 55776, 5
 220 poke 1506, 81: poke 55778, 6
 230 poke 1508, 81: poke 55780, 7
@@ -124,5 +127,3 @@
 701 print "sei una ciola"
 702 if dcan > highest then highest = dcan
 703 print highest
-
-
