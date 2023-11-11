@@ -498,3 +498,119 @@
 
 1700 print chr$(147) : end 
 
+------ BETA 4.B MODIFICA GAME OVER---------
+
+10 highest = 0
+11 print chr$(147)
+12 appoggio = 0
+13 x = 0
+20 print ("   benvenuto nel gioco del Simon Says")
+21 print ("             premi u per iniziare")
+30 get a$: if a$ = "" then 30
+40 if a$ = "u" then 150
+50 goto 30
+
+140 dim agenerata(99)
+150 print chr$(147)
+151 appoggio = 0
+152 x = 0
+160 poke 53281, 0
+180 iutente = 0
+190 igenerata = 0
+193 punti = 0
+194 for i = 1 to 21
+195 print ""
+196 next i
+197 print "  score                      highest" highest
+
+200 agenerata(igenerata) = int(4*rnd(0))+5
+201 rem poke 1984, 19: poke 1985, 3: poke 1986, 15: poke 1987, 18: poke 1988, 5 : rem score
+210 poke 1520, 81: poke 55792, 5
+220 poke 1522, 81: poke 55795, 6
+230 poke 1524, 81: poke 55796, 7
+240 poke 1526, 81: poke 55798, 8
+241 poke 1912, (48+x) : poke 1913, (appoggio+48)
+
+
+250 for s = 0 to igenerata
+260 poke (1520+((agenerata(s)-5)*2)), 42
+270 for t = 0 to 600
+280 next t
+
+281 poke (1520+((agenerata(s)-5)*2)),81
+290 for t = 0 to 150
+291 next t
+300 next s
+
+
+310 for  iutente = 0 to igenerata
+320 get a$ : if a$ = "" then goto 320
+330 autente = val (a$)
+340 if autente <> agenerata(iu) then goto 600.
+350 if iutente < igenerata then next iutente
+360 goto 500
+
+
+500 igenerata = igenerata + 1
+501 punti = igenerata
+502 appoggio = appoggio + 1 
+510 if appoggio > 9 then x = x + 1 : if appoggio > 9 then appoggio = 0 
+
+530 goto 200
+
+600 if autente = 5 or autente = 6 or autente = 7 or autente = 8 then goto 611
+610 goto 320
+
+611 print chr$(147)
+620 print chr$(13)
+
+631 poke 646, 2
+701 print "               game over!               "
+702 print chr$(13)
+703 print chr$(13)
+704 print "                                      "
+705 if punti < highest goto 706 
+706 poke 646, 13
+707 highest = punti : print "   hai battuto il record personale!"
+710 print chr$(13)
+713 print chr$(13)
+714 print chr$(13)
+715 print "                                      "
+
+718 poke 646, 15
+720 print "   premi x per ritornare all'inizio   "
+730 print "   premi y per giocare di nuovo       "
+740 print "   premi z per terminare              "
+741 print chr$(13)
+748 poke 646, 7
+749 print "  score                      highest" highest
+750 poke 646, 6
+
+751 for i=0 to 39
+
+752 poke 1024+i, 102: poke 55296+i,7
+753 poke 1064+i, 102: poke 55336+i,2
+754 poke 1104+i, 102: poke 55376+i,7
+
+755 poke 1184+i, 102: poke 55456+i,7
+756 poke 1224+i, 102: poke 55496+i,2
+757 poke 1264+i, 102: poke 55536+i,7
+
+759 next i
+
+760 for i=0 to 13
+761 poke 1144+i, 102: poke 55416+i,2
+762 poke 1144+15+11+i, 102: poke 55416+15+11+i,2
+765 next i
+
+
+
+
+
+771 get a$ : if a$ = "" then goto 771
+772 if a$ = "x" then goto 11
+780 if a$ = "y" then goto 150
+790 if a$ = "z" then goto 1700
+800 goto 771
+
+1700 print chr$(147) : end 
