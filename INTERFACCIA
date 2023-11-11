@@ -470,7 +470,7 @@
 11 poke 53281, 0
 
 12 poke 646, 1: rem cambia colore di testo
-13 print ("            64k stunning run            "); :rem stampa
+13 print ("          64k stunning running          "); :rem stampa
 14 print ("                                        ");
 15 print chr$(13)
 17 print ("                simonsays               ");
@@ -478,9 +478,9 @@
 20 print ("                                        ");
 
 
-22 print ("              wang kai jian             ");
+22 print ("              wang kaijian              ");
 24 print ("              bytyqi dardan             ");
-25 print ("               lu haoxiang              ");
+25 print ("              lu haoxiang               ");
 26 print ("                                        ");
 27 print ("                                        ");
 28 print ("                                        ");
@@ -499,14 +499,14 @@
 
 
 
-52 for i=0 to 9
-66 poke 1065+i,102 : poke 1065+28+i,102
+52 for i=0 to 7
+66 poke 1065+i,102 : poke 1065+30+i,102
 71 next i
 
 
 72 for a=0 to 4
 73 for i=0 to 2
-
+74 poke 1384+13+40*i,66 : poke 1423-12+40*i,66
 75 poke 1385+2*a+40*i+i,102 : poke 1422-2*a+40*i-i,102
 
 78 next i
@@ -613,3 +613,7 @@
 246 poke 1329, 32
 
 9999 goto 80
+
+
+
+
