@@ -765,6 +765,56 @@
 
 9999 goto 80
 
+------Parte sola per GAME OVER -----
+611 print chr$(147)
+620 print chr$(13)
 
+631 poke 646, 2
+701 print "               game over!               "
+
+702 print chr$(13)
+
+
+704 print "                                        "
+706 poke 646, 13
+707 print "    hai battuto il record personale!    "
+710 print chr$(13)
+
+
+
+718 poke 646, 15
+720 print "    premi x per ritornare all'inizio    "
+730 print "    premi y per giocare di nuovo        "
+740 print "    premi z per terminare               "
+741 print chr$(13)
+748 poke 646, 7
+749 print "  score                      highest" highest
+750 poke 646, 6
+
+751 for i=0 to 39
+
+
+753 poke 1064+i, 102: poke 55336+i,6
+
+
+
+756 poke 1224+i, 102: poke 55496+i,6
+
+759 next i
+
+760 for i=0 to 13
+761 poke 1144+i, 102: poke 55416+i,6
+762 poke 1144+15+11+i, 102: poke 55416+15+11+i,6
+765 next i
+
+770 poke 1344+2, 79 : poke 1344+40-2, 80 : poke 1424+2, 76 : poke 1424+40-2, 122
+772 poke 55616+2, 13 : poke 55616+40-2, 13 : poke 55696+2, 13 : poke 55696+40-2, 13
+
+773 for i=0 to 8
+774 x=4
+780 poke 1344+x+i+i,119 : poke 1344+40-x-i-i, 119
+781 poke 55616+x+i+i, 13 : poke 55616+40-x-i-i, 13
+790 poke 1424+x+i+i, 111 : poke 1424+40-x-i-i, 111
+791 poke 55696+x+i+i, 13 : poke 55696+40-x-i-i, 13
 
 
