@@ -191,3 +191,298 @@
 
 1700 print chr$(147) : end 
 
+
+
+
+
+
+---codice completo 1.0 con animazioni e ripresa dei tasti per iniziare il gioco rallentato---
+
+
+1 highest = 0
+2 print chr$(147)
+3 appoggio = 0
+4 x = 0
+5 co = 0
+
+10 print chr$(147)
+11 poke 53281, 0
+12 poke 646, 1: rem cambia colore di testo
+
+13 print ("            64k stunning run            "); :rem stampa
+14 print ("                                        ");
+15 print chr$(13)
+17 print ("                simonsays               ");
+18 print chr$(13)
+20 print ("                                        ");
+
+
+22 print ("              wang kaijian              ");
+24 print ("              bytyqi dardan             ");
+25 print ("              lu haoxiang               ");
+26 print ("                                        ");
+27 print ("                                        ");
+28 print ("                                        ");
+
+
+30 poke 646, 15: rem cambia colore di testo
+31 print ("       premi x per iniziare il gioco    ");
+32 print ("                                        ");
+33 print ("       premi y per uscire dal gioco     ");
+34 print ("                                        ");
+35 print ("                                        ");
+
+37 poke 646, 7: rem cambia colore di testo
+38 print chr$(13)
+41 print (" iis einaudi                  highest") highest
+
+
+
+
+
+42 for i=0 to 9
+43 poke 1065+i,102 : poke 1065+28+i,102
+44 next i
+
+
+45 for a=0 to 4
+46 for i=0 to 2
+47 poke 1384+13+40*i,66 : poke 1423-12+40*i,66
+48 poke 1385+2*a+40*i+i,102 : poke 1422-2*a+40*i-i,102
+
+49 next i
+50 next a
+
+
+51 get a$ 
+52 if a$ = "x" then 150
+53 if a$ = "y" then goto 1700
+
+
+
+54 poke 1199, 79 :rem contorno simonsays
+55 poke 1209, 80
+56 poke 1279, 76
+57 poke 1289, 122
+
+58 poke 1200, 119 :rem bordo sopra
+59 poke 1202, 119
+60 poke 1203, 119
+61 poke 1205, 119
+62 poke 1206, 119
+63 poke 1208, 119
+
+64 poke 1280, 111 :rem bordo sotto
+65 poke 1282, 111
+66 poke 1283, 111
+67 poke 1285, 111
+68 poke 1286, 111
+69 poke 1288, 111
+
+
+70 for t = 1 to 700: next t
+
+71 rem parte space non ingrandita
+
+72 poke 1199, 32 :rem contorno simonsays space
+73 poke 1209, 32
+74 poke 1279, 32
+75 poke 1289, 32
+
+76 poke 1200, 32 :rem bordo sopra space
+77 poke 1202, 32
+78 poke 1203, 32
+79 poke 1205, 32
+80 poke 1206, 32
+81 poke 1208, 32
+
+82 poke 1280, 32 :rem bordo sotto space
+83 poke 1282, 32
+84 poke 1283, 32
+85 poke 1285, 32
+86 poke 1286, 32
+87 poke 1288, 32
+
+88 rem parte ingrandita
+
+
+89 poke 1158, 79 :rem contorno simonsays ingrandito
+90 poke 1170, 80
+91 poke 1318, 76
+92 poke 1330, 122
+
+93 poke 1238, 116 :rem verticale destro
+
+94 poke 1250, 106 :rem verticale sinistro
+
+95 poke 1159, 119 :rem bordo sopra ingrandito
+96 poke 1162, 119
+97 poke 1163, 119
+98 poke 1164, 119
+99 poke 1165, 119
+100 poke 1166, 119
+101 poke 1169, 119
+
+102 poke 1319, 111 :rem bordo sotto ingrandito
+103 poke 1322, 111
+104 poke 1323, 111
+105 poke 1324, 111
+106 poke 1325, 111
+107 poke 1326, 111
+108 poke 1329, 111
+
+109 x=1
+110 for t = 1 to 700: next t
+
+
+111 poke 1158, 32 :rem contorno simonsays ingrandito space
+112 poke 1170, 32
+113 poke 1318, 32
+114 poke 1330, 32
+
+115 poke 1238, 32 :rem verticale(ingrandito) destro space
+
+116 poke 1250, 32 :rem verticale(ingrandito) sinistro space
+
+117 poke 1159, 32 :rem bordo sopra ingrandito space
+118 poke 1162, 32
+119 poke 1163, 32
+120 poke 1164, 32
+121 poke 1165, 32
+122 poke 1166, 32
+123 poke 1169, 32
+
+124 poke 1319, 32 :rem bordo sotto ingrandito space
+125 poke 1322, 32
+126 poke 1323, 32
+127 poke 1324, 32
+128 poke 1325, 32
+129 poke 1326, 32
+130 poke 1329, 32
+
+
+
+
+
+148 goto 51
+
+149 dim agenerata(99)
+150 print chr$(147)
+151 appoggio = 0
+152 x = 0
+180 iutente = 0
+190 igenerata = 0
+193 punti = -1
+194 for i = 1 to 7
+195 print ""
+196 next i
+197 if co = 1 goto 200
+198 print "    sei pronto? premi x per iniziare"
+199 goto 201
+200 print ""
+201 for i = 1 to 13
+202 print ""
+203 next i
+204 print "  score                      highest" highest
+
+208 agenerata(igenerata) = int(4*rnd(0))+5
+210 poke 1520, 81: poke 55792, 5
+220 poke 1522, 81: poke 55795, 6
+230 poke 1524, 81: poke 55796, 7
+240 poke 1526, 81: poke 55798, 8
+241 poke 1912, (48+x) : poke 1913, (appoggio+48)
+242 if co = 1 goto 250
+
+244 get a$ : if a$ = "" or a$ <> "x" then goto 244
+245 if a$ = "x" then co = 1 : goto 150
+
+250 for s = 0 to igenerata
+260 poke (1520+((agenerata(s)-5)*2)), 42
+270 for t = 0 to 330
+280 next t
+
+281 poke (1520+((agenerata(s)-5)*2)), 81
+290 for t = 0 to 80
+291 next t
+300 next s
+
+310 for iutente = 0 to igenerata
+320 get a$ : if a$ = "" then goto 320
+330 autente = val(a$)
+340 if autente <> agenerata(iutente) then goto 600.
+350 if iutente < igenerata then next iutente
+360 goto 500
+
+500 igenerata = igenerata + 1
+501 punti = igenerata
+502 appoggio = appoggio + 1
+510 if appoggio > 9 then x = x + 1 : if appoggio > 9 then appoggio = 0
+
+530 goto 208
+
+600 if autente >= 5 and autente <= 8 then goto 611
+610 goto 320
+
+
+
+
+611 print chr$(147)
+620 print chr$(13)
+
+631 poke 646, 2
+701 print "               game over!               "
+
+702 print chr$(13)
+
+
+704 print "                                        "
+706 poke 646, 13
+707 if punti < highest goto 735
+708 highest = punti 
+709 print "    hai battuto il record personale!    "
+
+710 poke 1344+2, 79 : poke 1344+40-3, 80 : poke 1424+2, 76 : poke 1424+40-3, 122
+711 poke 55616+2, 13 : poke 55616+40-3, 13 : poke 55696+2, 13 : poke 55696+40-3, 13
+
+712 for i=0 to 8
+713 a=4
+720 poke 1344+a+i+i,119 : poke 1344+40-a-i-i, 119
+721 poke 55616+a+i+i, 13 : poke 55616+40-a-i-i, 13
+722 poke 1424+a+i+i, 111 : poke 1424+40-a-i-i, 111
+723 poke 55696+a+i+i, 13 : poke 55696+40-a-i-i, 13
+724 next i
+
+726 goto 736
+735 print "                                        "
+736 print chr$(13)
+
+737 poke 646, 15
+738 print "    premi x per ritornare all'inizio    "
+739 print "    premi y per giocare di nuovo        "
+740 print "    premi z per terminare               "
+741 print chr$(13)
+742 poke 646, 7
+743 print "  score                      highest" highest
+744 poke 1872, (48+x) : poke 1873, (appoggio+48) :rem punteggio score
+
+751 for i=0 to 39
+753 poke 1064+i, 102: poke 55336+i,6
+756 poke 1224+i, 102: poke 55496+i,6
+
+759 next i
+
+760 for i=0 to 13
+761 poke 1144+i, 102: poke 55416+i,6
+762 poke 1144+15+11+i, 102: poke 55416+15+11+i,6
+765 next i
+
+770 poke 646, highest
+
+
+1600 get a$ : if a$ = "" then goto 1600
+1601 if a$ = "x" then goto 10
+1602 if a$ = "y" then goto 150
+1603 if a$ = "z" then goto 1700
+1604 goto 1600
+
+1700 print chr$(147) : end
