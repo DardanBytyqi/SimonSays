@@ -63,7 +63,7 @@
 208 agenerata(igenerata) = int(4*rnd(0))+5
 209 rem poke 1984, 19: poke 1985, 3: poke 1986, 15: poke 1987, 18: poke 1988, 5 : rem score
 210 poke 1520, 81: poke 55792, 5
-220 poke 1522, 81: poke 55795, 6
+220 poke 1522, 81: poke 55794, 6
 230 poke 1524, 81: poke 55796, 7
 240 poke 1526, 81: poke 55798, 8
 241 poke 1912, (48+x) : poke 1913, (appoggio+48)
