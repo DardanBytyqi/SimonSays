@@ -1835,3 +1835,397 @@ NIGGER
 11030 if scelta = 2 then goto 180
 11060 if scelta = 3 then  end
 
+-----Beta 3.0-----
+10 scelta = 1
+30 highest = 0
+60 print chr$(147)
+90 appoggio = 0
+100 y=0
+110 h=0 
+120 x = 0
+150 co = 0
+160 l = 0
+170 x=1
+
+
+180 print chr$(147)
+210 poke 53281, 0 : poke 53280,12
+240 poke 646, 2: rem cambia colore di testo
+
+270 print ("            64k stunning run            ") :rem stampa
+
+330 print chr$(13)
+340 poke 646, 1
+360 print ("               simonsays                ")
+390 print chr$(13)
+
+450 print ("                  start                 ");
+
+480 print ("                  guide                 ");
+
+510 print ("                  exit                  ");
+
+550 print chr$(13)
+
+555 poke 646, 15: rem cambia colore di testo
+
+560 print "            w sopra e s sotto            ";
+570 print "               x seleziona               "
+
+
+
+660 print ("              wang kaijian              ");
+720 print ("              bytyqi dardan             ");
+780 print ("              lu haoxiang               ");
+
+810 poke 646, 7: rem cambia colore di testo
+840 print chr$(13)
+870 print (" iis einaudi                  highest") highest
+
+900 for i=0 to 9
+930 poke 1065+i,102 : poke 1065+28+i,102
+960 next i
+
+990 for a=0 to 4
+1020 for i=0 to 2
+1050 poke 1384+13+40*i,66 : poke 1423-12+40*i,66
+1080 poke 1385+2*a+40*i+i,102 : poke 1422-2*a+40*i-i,102
+1110 next i
+1140 next a
+
+1160 l = 1
+1170 get a$ 
+1200 if a$ = "w" then goto 9000
+1210 if a$ = "s" then goto 9500
+1220 if a$ = "x" then goto 7500
+
+1230 poke (1408+((scelta-1)*40)),31 : poke (55680+((scelta-1)*40)),1
+
+1260 poke 1199, 79 :rem contorno simonsays
+1290 poke 1209, 80
+1320 poke 1279, 76
+1350 poke 1289, 122
+
+1380 poke 1200, 119 :rem bordo sopra
+1410 poke 1202, 119
+1440 poke 1203, 119
+1470 poke 1205, 119
+1500 poke 1206, 119
+1530 poke 1208, 119
+
+1560 poke 1280, 111 :rem bordo sotto
+1590 poke 1282, 111
+1620 poke 1283, 111
+1650 poke 1285, 111
+1680 poke 1286, 111
+1710 poke 1288, 111
+
+1730 l = 2
+1740 for o = 1 to 50
+1750 get a$
+1751 if a$ = "w" then goto 9000
+1752 if a$ = "s" then goto 9500
+1753 if a$ = "x" then goto 7500
+1754 poke (1408+((scelta-1)*40)),31 : poke (55680+((scelta-1)*40)),1
+1760 next o
+
+1770 rem parte space non ingrandita
+
+1800 poke 1199, 32 :rem contorno simonsays space
+1830 poke 1209, 32
+1860 poke 1279, 32
+1890 poke 1289, 32
+
+1920 poke 1200, 32 :rem bordo sopra space
+1950 poke 1202, 32
+1980 poke 1203, 32
+2010 poke 1205, 32
+2040 poke 1206, 32
+2070 poke 1208, 32
+
+2100 poke 1280, 32 :rem bordo sotto space
+2130 poke 1282, 32
+2160 poke 1283, 32
+2190 poke 1285, 32
+2220 poke 1286, 32
+2250 poke 1288, 32
+
+2280 rem parte ingrandita
+
+2310 poke 1158, 79 :rem contorno simonsays ingrandito
+2340 poke 1170, 80
+2370 poke 1318, 76
+2400 poke 1330, 122
+
+2430 poke 1238, 116 :rem verticale destro
+
+2460 poke 1250, 106 :rem verticale sinistro
+
+2490 poke 1159, 119 :rem bordo sopra ingrandito
+2520 poke 1162, 119
+2550 poke 1163, 119
+2580 poke 1164, 119
+2610 poke 1165, 119
+2640 poke 1166, 119
+2670 poke 1169, 119
+
+2700 poke 1319, 111 :rem bordo sotto ingrandito
+2730 poke 1322, 111
+2760 poke 1323, 111
+2790 poke 1324, 111
+2820 poke 1325, 111
+2850 poke 1326, 111
+2880 poke 1329, 111
+
+2930 l = 3
+2940 for m = 1 to 50
+2950 get a$
+2951 if a$ = "w" then goto 9000
+2952 if a$ = "s" then goto 9500
+2953 if a$ = "x" then goto 7500
+2954 poke (1408+((scelta-1)*40)),31 : poke (55680+((scelta-1)*40)),1
+2959 next m
+
+
+2970 poke 1158, 32 :rem contorno simonsays ingrandito space
+3000 poke 1170, 32
+3030 poke 1318, 32
+3060 poke 1330, 32
+
+3090 poke 1238, 32 :rem verticale(ingrandito) destro space
+
+3120 poke 1250, 32 :rem verticale(ingrandito) sinistro space
+
+3150 poke 1159, 32 :rem bordo sopra ingrandito space
+3180 poke 1162, 32
+3210 poke 1163, 32
+3240 poke 1164, 32
+3270 poke 1165, 32
+3300 poke 1166, 32
+3330 poke 1169, 32
+
+3360 poke 1319, 32 :rem bordo sotto ingrandito space
+3390 poke 1322, 32
+3420 poke 1323, 32
+3450 poke 1324, 32
+3480 poke 1325, 32
+3510 poke 1326, 32
+3540 poke 1329, 32
+
+3560 l = 1 
+3570 goto 1170
+
+3600 dim agenerata(99)
+3630 print chr$(147)
+3660 appoggio = 0
+3690 x = 0
+3720 iutente = 0
+3750 igenerata = 0
+3780 punti = -1
+
+3840 print "";
+3841 poke 646,15
+
+3845 print " premi tasti:"
+3846 print "            - 5 per il verde            ";
+3847 print "            - 6 per il blu              ";
+3848 print "            - 7 per il giallo           ";
+3849 print "            - 8 per il marrone          "
+
+
+
+3899 print "";
+3900 if co = 1 goto 3990
+3920 poke 646,7
+3925 print  chr$(13)
+3930 print "    sei pronto? premi x per iniziare"
+3960 goto 4020
+3990 print ""
+4020 for i = 1 to 12
+4030 print ""
+4080 next i
+4090 poke 646,7
+4100 if co = 1 then print  chr$(13)
+4110 print "  score                     highest"
+
+4140 agenerata(igenerata) = int(4*rnd(0))+5
+4170 poke 1520, 81: poke 55792, 5
+4200 poke 1522, 81: poke 55794, 6
+4230 poke 1524, 81: poke 55796, 7
+4260 poke 1526, 81: poke 55798, 8
+4290 poke 1912, (48+x) : poke 1913, (appoggio+48)
+4300 poke 1940, (48+y) : poke 1941, (highest+48)
+
+4320 if co = 1 goto 4410
+
+4350 get a$ : if a$ = "" or a$ <> "x" then goto 4350
+4380 if a$ = "x" then co = 1 : goto 3630
+
+4410 for s = 0 to igenerata
+4440 poke (1520+((agenerata(s)-5)*2)), 42
+4470 for t = 0 to 330
+4500 next t
+
+4530 poke (1520+((agenerata(s)-5)*2)), 81
+4560 for t = 0 to 80
+4590 next t
+4620 next s
+
+
+
+4650 for iutente = 0 to igenerata
+4680 get a$ : if a$ = "" then goto 4680
+4710 autente = val(a$)
+4740 if autente <> agenerata(iutente) then goto 6000
+4770 if iutente < igenerata then next iutente
+4800 goto 5000
+
+5000 igenerata = igenerata + 1
+5010 punti = igenerata
+5020 appoggio = appoggio + 1
+5100 if appoggio > 9 then x = x + 1 : if appoggio > 9 then appoggio = 0
+5110 if punti > 9 then y = y + 1 : if punti > 9 then punti = 0
+
+5130 goto 4140
+
+6000 if autente >= 5 and autente <= 8 then goto 6110
+6100 goto 4680
+
+6110 print chr$(147)
+6140 print chr$(13)
+
+6150 h=0
+
+6170 poke 646, 2
+6200 print "               game over!               "
+
+6230 print chr$(13)
+
+6260 print "                                        "
+6290 poke 646, 13
+6320 if punti < highest goto 6750
+6350 highest = punti
+6360 h=1 
+6380 print "    hai battuto il record personale!    "
+
+6410 poke 1344+2, 79 : poke 1344+40-3, 80 : poke 1424+2, 76 : poke 1424+40-3, 122
+6440 poke 55616+2, 13 : poke 55616+40-3, 13 : poke 55696+2, 13 : poke 55696+40-3, 13
+
+6470 for i=0 to 8
+6500 a=4
+6530 poke 1344+a+i+i,119 : poke 1344+40-a-i-i, 119
+6560 poke 55616+a+i+i, 13 : poke 55616+40-a-i-i, 13
+6590 poke 1424+a+i+i, 111 : poke 1424+40-a-i-i, 111
+6620 poke 55696+a+i+i, 13 : poke 55696+40-a-i-i, 13
+6650 next i
+
+6680 if h=1 then print chr$(13): goto 6780 
+
+6690 print chr$(13)
+6750 print chr$(13)
+
+
+6780 poke 646, 15
+6810 print "                 menu"
+6840 print "                 replay"
+6870 print "                 end" : print chr$(13) : print chr$(13);
+6875 scelta = 1 
+
+
+6900 if h=0 then print chr$(13) : if h=1 then goto 6920  
+6910 print chr$(13);
+6920 print chr$(13)
+6930 poke 646, 7
+6960 print "  score                     highest";
+6990 poke 1912, (48+x) : poke 1913, (appoggio+48) :rem punteggio score
+6995 poke 1940, (48+y) : poke 1941, (highest+48) :rem punteggio highest
+
+
+
+7020 for i=0 to 39
+7050 poke 1064+i, 102: poke 55336+i,6
+7080 poke 1224+i, 102: poke 55496+i,6
+
+7110 next i
+
+7140 for i=0 to 13
+7170 poke 1144+i, 102: poke 55416+i,6
+7200 poke 1144+15+11+i, 102: poke 55416+15+11+i,6
+7230 next i
+
+7240 co = 0
+7250 poke (1488+(h*80)+((scelta-1)*40)),31 : poke (55760+(h*80)+((scelta-1)*40)),1
+7260 get a$ 
+7290 if a$ = "w" then goto 8000
+7320 if a$ = "s" then goto 8500
+7350 if a$ = "x" then goto 11000
+7360 goto 7260
+
+7380 goto 7260
+
+7410 print chr$(147) : end
+
+
+7500 if scelta = 1 then goto 3630
+7600 if scelta = 2 then goto 12000
+7700 if scelta = 3 then goto 7410
+
+
+8000 poke (1488+(h*80)+((scelta-1)*40)),32
+8100 if scelta = 1 then goto 8400
+8200 scelta = scelta - 1 : goto 7250
+8400 scelta = 3 : goto 7250 
+
+8500 poke (1488+(h*80)+((scelta-1)*40)),32
+8600 if scelta = 3 then goto 8900
+8700 scelta = scelta + 1 : goto 7250
+8900 scelta = 1 : goto 7250
+
+9000 poke (1408+((scelta-1)*40)),32
+9100 if scelta = 1 then goto 9400
+9200 scelta = scelta - 1
+9300 goto 10000
+9400 scelta = 3 : goto 10000
+
+9500 poke (1408+((scelta-1)*40)),32
+9600 if scelta = 3 then goto 9900x
+9700 scelta = scelta + 1
+9800 goto 10000
+9900 scelta = 1 : goto 10000
+
+10000 if l=1 then goto 1170
+10030 if l=2 then goto 1754
+10060 if l=3 then goto 2954
+
+
+11000 if scelta = 1 then goto 180
+11030 if scelta = 2 then goto 180
+11060 if scelta = 3 then  end
+
+12000 print chr$(147)
+12005 poke 646, 1
+12006 print chr$(13)
+12010 print "     benvenuto nel gioco simonsays      "
+12011 print chr$(13);
+12015 poke 646, 3
+12020 print "     inserisci la sequenza giusta!      "
+
+12030 print "4 palline sostituite da * una alla volta";
+12040 print "      ripeti la sequenza generata!      "
+
+12050 print "        dopo ogni sequenza valida       ";
+12060 print "   il numero di sequenze aumenteranno!  "
+
+12070 print "           ripeti la sequenza           ";
+12080 print "          al massimo che puoi!          "
+
+12090 print "       sfida la tua vera memoria!       "
+
+12100 print "           buon divertimento!           "
+
+12110 poke 646, 15
+12200 print "      premi x per ritornare al menu     "
+
+12300 get a$ 
+12400 if a$ = "x" then goto 180
+12500 goto 12300
