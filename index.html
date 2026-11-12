@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SimonSays · Commodore 64</title>
+    <meta name="description" content="A Simon Says memory game for the Commodore 64, playable in the browser." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css?v=6" />
+  </head>
+  <body>
+    <main>
+      <h1>Simon<span>Says</span></h1>
+
+      <div class="cabinet">
+        <div class="screen">
+          <div id="game"></div>
+          <p class="insert"><span>Press any key</span></p>
+        </div>
+      </div>
+
+      <ul class="pads">
+        <li class="green">5</li>
+        <li class="blue">6</li>
+        <li class="yellow">7</li>
+        <li class="brown">8</li>
+      </ul>
+      <p class="hint">W S menu · X select</p>
+    </main>
+
+    <footer>
+      <a href="https://github.com/DardanBytyqi/SimonSays">Source</a>
+      <a href="simonsays.d64" download>Disk image</a>
+    </footer>
+
+    <script>
+      EJS_player = '#game'
+      EJS_core = 'c64'
+      EJS_gameUrl = 'simonsays.prg'
+      EJS_gameName = 'SimonSays'
+      EJS_pathtodata = 'https://cdn.emulatorjs.org/4.2.3/data/'
+      EJS_color = '#bfce72'
+      EJS_startOnLoaded = true
+      // Keys go to the C64 keyboard instead of the virtual joypad.
+      EJS_defaultOptions = { keyboardInput: 'enabled' }
+      // Browsers hold the emulator until the first key press or click, so the prompt goes away then.
+      const hideInsert = () => document.querySelector('.insert')?.remove()
+      addEventListener('keydown', hideInsert, { once: true, capture: true })
+      addEventListener('pointerdown', hideInsert, { once: true, capture: true })
+    </script>
+    <script src="https://cdn.emulatorjs.org/4.2.3/data/loader.js"></script>
+  </body>
+</html>
